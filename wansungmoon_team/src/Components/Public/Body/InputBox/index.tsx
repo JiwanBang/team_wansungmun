@@ -4,15 +4,13 @@ interface IProps {
   sort: string;
   value?: string;
   name?: string;
-  placeholder?: string;
-  onInput?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onInput?: (e: ChangeEvent<HTMLInputElement>) => {};
 }
 
 const InputTextBox = ({
   sort,
   value,
   name = "",
-  placeholder,
   onInput,
 }: IProps): JSX.Element => {
   return (
@@ -21,7 +19,7 @@ const InputTextBox = ({
       <div>
         <InputText
           name={name}
-          placeholder={placeholder}
+          placeholder={sort}
           onInput={onInput}
           value={value}
         />
