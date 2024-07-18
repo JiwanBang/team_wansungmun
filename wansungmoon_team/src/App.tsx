@@ -6,12 +6,18 @@ import MediumBtn from "./Components/Public/Body/MediumButton/MediumBtn";
 import SmallButton from "./Components/Public/Body/SmallButton/SmallButton";
 import OrderListPage from "./Components/OrderListPage";
 import SearchVoca from "./Components/Public/Body/SearchVoca/SearchVoca";
+import Main from "./Components/Main/Main";
+import MenuBar from "./Components/Public/Footer/MenuBar";
+import List from "./Components/ProductList/Body";
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <ProductUpload></ProductUpload>
+      <Main></Main>
+      <ProductList></ProductList>
+      <MenuBar></MenuBar>
+      {/* <ProductUpload></ProductUpload> */}
       {/* <ProductList></ProductList> */}
       {/* <MediumBtn textColor="white" bgColor="blue">
         포인트 충전
