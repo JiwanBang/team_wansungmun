@@ -9,6 +9,11 @@ import SearchVoca from "./Components/Public/Body/SearchVoca/SearchVoca";
 import Main from "./Components/Main/Main";
 import MenuBar from "./Components/Public/Footer/MenuBar";
 import List from "./Components/ProductList/Body";
+import { Route, Routes } from "react-router-dom";
+import Email from "./Components/Temp/Email";
+import KakaoBtn from "./Components/Temp/KakaoBtn";
+import Login from "./Components/Login";
+import Email_login from "./Components/Login/Login_Email/Comp";
 
 function App() {
   return (
@@ -29,6 +34,10 @@ function App() {
       {/* <SearchVoca textColor="black" bgColor="white">
         세탁기
       </SearchVoca> */}
+      <Routes>
+        <Route path="/login" Component={Login}></Route>
+        <Route path="/login/email" Component={Email_login}></Route>
+      </Routes>
     </div>
   );
 }
