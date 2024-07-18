@@ -9,9 +9,9 @@ export interface LoginForm {
   password: string;
 }
 
-const Email_login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+// const Email_login = () => {
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
 
   const onSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -67,4 +67,5 @@ const Email_login = () => {
   );
 };
 
-export default Email_login;
+// export default Email_login;
+export default {};

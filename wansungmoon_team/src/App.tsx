@@ -15,8 +15,8 @@ import Email_login from "./Components/Login/Login_Email/Comp";
 function App() {
   return (
     <div>
-      {/* <Header></Header> */}
-      {/* <ProductUpload></ProductUpload> */}
+      <Header></Header>
+      <ProductUpload></ProductUpload>
       {/* <ProductList></ProductList> */}
       {/* <MediumBtn textColor="white" bgColor="blue">
         포인트 충전
