@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import InputTextBox from "../../Public/Body/InputBox";
 import Button from "../../Public/Body/Button";
+import { ModalComp } from "./loca_modal/Comp";
+import axios from "axios";
 
 const Regist_email = () => {
   const [email, setEmail] = useState("");
@@ -9,11 +11,30 @@ const Regist_email = () => {
   const [phoneNum, setPhoneNum] = useState("");
   const [location, setLocation] = useState("");
   const [detailloca, setDetailloca] = useState("");
-  const [modalOpen, setModalOpen] = useState(false);
-  const modalBackground = useRef();
+
   const onSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    console.log(email + "+" + password + "+" + phoneNum + "+" + nickname);
+    try {
+      event.preventDefault();
+      console.log(email + "+" + password + "+" + phoneNum + "+" + nickname);
+      const data = await axios.post("/api/regist", {
+        email: email,
+        password: password,
+        nickname: nickname,
+        phoneNum: phoneNum,
+        location: "서울시 어디구 무지개너머로",
+        detailloca: detailloca,
+      });
+      console.log(data.status);
+      if (data.status == 301) {
+        alert("이메일 중복");
+      } else if (data.status == 302) {
+        alert("휴대폰중복");
+      } else if (data.status == 303) {
+        alert("어쩌구저쩌꾸");
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
   return (
     <div className="container">
@@ -42,32 +63,8 @@ const Regist_email = () => {
           value={phoneNum}
           onInput={(e) => setPhoneNum(e.target.value)}
         />
+        <ModalComp />
 
-        <div className="btn-wrapper">
-          <Button
-            textColor="black"
-            bgColor="gray"
-            onClick={(e) => setModalOpen(true)}
-          >
-            현재 주소로 찾기
-          </Button>
-        </div>
-        {modalOpen && (
-          <div
-            className="Modal-container"
-            ref="modalBackground"
-            onClick={(e) => {
-              if (e.target === modalBackground.current) {
-                setModalOpen(false);
-              }
-            }}
-          >
-            <div className="modal-content">
-              <p>오늘도 맨덜리에는 안개가 자욱하군요</p>
-              <p>날씨 얘기는 하지 마세요 댄버스 부인!!!</p>
-            </div>
-          </div>
-        )}
         <InputTextBox
           title="상세주소"
           placeholder="상세주소"

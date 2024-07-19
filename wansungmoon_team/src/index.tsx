@@ -10,7 +10,14 @@ import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:3080";
 axios.defaults.validateStatus = (status) => {
+<<<<<<< HEAD
   return status === 200 ? true : false;
+=======
+  if (status == 301) return true;
+  else if (status == 302) return true;
+  else if (status == 303) return true;
+  return status == 200 ? true : false;
+>>>>>>> 7ec7a04 (regist before_rebase)
 };
 
 const root = ReactDOM.createRoot(
