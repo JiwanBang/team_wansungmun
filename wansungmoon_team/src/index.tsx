@@ -10,6 +10,9 @@ import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:3080";
 axios.defaults.validateStatus = (status) => {
+  if (status == 301) return true;
+  else if (status == 302) return true;
+  else if (status == 303) return true;
   return status == 200 ? true : false;
 };
 
