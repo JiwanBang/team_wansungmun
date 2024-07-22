@@ -71,10 +71,14 @@ function App() {
         <Route path="/regist" Component={Regist}></Route>
         <Route path="/orderList" Component={OrderListPage}></Route>
         <Route path="/orderListSelled" Component={OrderListPageSelled}></Route>
+<<<<<<< HEAD
         <Route
           path="/orderListSelling"
           Component={OrderListPageSelling}
         ></Route>
+=======
+        <Route path="/orderListSelling"></Route>
+>>>>>>> 8a96661 (Feat:test)
         <Route path="/reviewHistory" Component={ReviewHistory}></Route>
         <Route path="/Dib" Component={Dib}></Route>
         <Route path="/productDetail" Component={ProductDetail}></Route>
@@ -82,6 +86,7 @@ function App() {
         <Route path="/locationCheck" Component={LocationCheck} />
         <Route path="/regist/kakao" Component={Kakao_regist}></Route>
       </Routes>
+      <div></div>
     </div>
   );
 }
