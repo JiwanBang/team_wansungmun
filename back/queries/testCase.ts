@@ -40,7 +40,7 @@ const mkCase = async () => {
   // });
   for (let i = 1; i < 22; i++) {
     await db.Category.create({
-      cateImg: "/api/upload/getImg?imgName=" + `${i}` + ".png",
+      cateImg: `:${process.env.PORT}/api/upload/getImg?imgName=${i}.png`,
       category: titleArr[i - 1] ? titleArr[i - 1] : `${i}`,
     });
   }
