@@ -59,7 +59,7 @@ const Body = () => {
         alert("카테고리를 선택해주세요!");
       } else if (!etcData.point) {
         alert("가격을 선택해주세요!");
-      } else if (mapAddress == "거래희망장소!") {
+      } else if (mapAddress === "거래희망장소!") {
         alert("거래 장소를 선택해주세요!");
       } else if (!etcData.title) {
         alert("제목을 입력해주세요!");
@@ -88,9 +88,9 @@ const Body = () => {
           data: formData,
           withCredentials: true,
         });
-        if (data.status == 302) {
+        if (data.status === 302) {
           alert("유저 정보를 찾을 수 없습니다");
-        } else if (data.status == 201) {
+        } else if (data.status === 201) {
           navigate("/");
         }
       }

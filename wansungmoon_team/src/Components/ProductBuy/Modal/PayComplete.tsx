@@ -43,7 +43,7 @@ export const PayComplete = ({
   const onSubmit = async () => {
     if (userpoint - price < 0) {
       setCantbuy(true);
-    } else if (locaValue == "6") {
+    } else if (locaValue === "6") {
       const payComplete = await axios.post(
         "/api/trade/sellcomplete",
         {
@@ -55,7 +55,7 @@ export const PayComplete = ({
         },
         { withCredentials: true }
       );
-      if (payComplete.status == 211) {
+      if (payComplete.status === 211) {
         setModalOpen(true);
         setTimeout(() => navigate("/"), 1000);
       } else {
@@ -75,7 +75,7 @@ export const PayComplete = ({
         { withCredentials: true }
       );
 
-      if (payComplete.status == 211) {
+      if (payComplete.status === 211) {
         setModalOpen(true);
         setTimeout(() => navigate("/"), 1000);
       } else {

@@ -24,9 +24,9 @@ const Email_login = () => {
         alert("이메일 형식을 맞춰서 입력해주세요");
       } else if (!pwreg.test(password)) {
         alert("패스워드 형식을 맞춰서 입력해주세요");
-      } else if (email.length == 0) {
+      } else if (email.length === 0) {
         alert("이메일을 입력해주세요");
-      } else if (password.length == 0) {
+      } else if (password.length === 0) {
         alert("패스워드를 입력해주세요 ");
       } else {
         const data = await axios.post(
@@ -39,12 +39,12 @@ const Email_login = () => {
             withCredentials: true,
           }
         );
-        if (data.status == 201) {
+        if (data.status === 201) {
           console.log(data);
           // const location = useLocation();
 
           navigate("/");
-        } else if (data.status == 301) {
+        } else if (data.status === 301) {
           alert("유저를 찾을 수 없습니다");
         }
         // axios.get("api/logCheck", { withCredentials: true });

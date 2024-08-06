@@ -45,13 +45,13 @@ const Kakao_regist = () => {
           { withCredentials: true }
         );
         console.log(data.status);
-        if (data.status == 301) {
+        if (data.status === 301) {
           alert("이미 가입된 이메일입니다");
-        } else if (data.status == 302) {
+        } else if (data.status === 302) {
           alert("중복된 휴대폰 번호입니다");
-        } else if (data.status == 303) {
+        } else if (data.status === 303) {
           alert("중복된 닉네임입니다");
-        } else if (data.status == 201) {
+        } else if (data.status === 201) {
           navigate("/");
         }
       }

@@ -22,14 +22,15 @@ const OrderListPage = () => {
         src: item.product.titleImg,
         pressBtnInfo: {
           tradeListPath: `/orderDetail/${item.product.id}`,
-          move: item.product.tradeStatus == 2 ? "locationCheck" : "tradeCancel",
+          move:
+            item.product.tradeStatus === 2 ? "locationCheck" : "tradeCancel",
           onClick: () => {
-            if (item.product.tradeStatus == 2)
+            if (item.product.tradeStatus === 2)
               navigate(`/locationCheck/${item.product.id}`);
           },
         },
       },
-      topData: { state: item.product.tradeStatus == 2 ? "trading" : "traded" },
+      topData: { state: item.product.tradeStatus === 2 ? "trading" : "traded" },
     });
   }
   return (

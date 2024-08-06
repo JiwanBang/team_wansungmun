@@ -24,9 +24,9 @@ const ProductListPage = () => {
         src: item.titleImg as string,
         stateBtnInfo: {
           state:
-            item.tradeStatus == 1
+            item.tradeStatus === 1
               ? "selling"
-              : item.tradeStatus == 2
+              : item.tradeStatus === 2
               ? "trading"
               : "traded",
           isDirectTrade: item.isDirectTrade as boolean,

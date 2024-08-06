@@ -49,7 +49,7 @@ const LoginArea = () => {
           withCredentials: true,
         });
         console.log(isLogin.data);
-        if (isLogin.status == 201) {
+        if (isLogin.status === 201) {
           console.log("로그인 성공");
           setUserState({ autority: isLogin.data.autority });
         } else {
