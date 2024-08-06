@@ -14,7 +14,7 @@ import Stars from "../Stars/Stars";
 import { MouseEvent } from "react";
 
 const ReviewWrite = () => {
-  const [textAreaData, setTextAreaData] = useState<string>("");
+  // const [textAreaData, setTextAreaData] = useState<string>("");
   const { uploadedImg, onChangeImg } = useImgUpload(5);
   const { recommendIndex, setRecommendIndex } = useRecommend();
   const { score, setScore } = useScore();
@@ -50,7 +50,7 @@ const ReviewWrite = () => {
             placeholder="거래에 대한 솔직한 후기를 남겨주세요. 거래에 만족하셨다면, 아래 거래 후기 항목에 별점을 매겨주세요."
             rows={3}
             onChange={(e) => {
-              setTextAreaData(e.target.value);
+              // setTextAreaData(e.target.value);
             }}
           />
         </div>

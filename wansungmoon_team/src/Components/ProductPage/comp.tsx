@@ -4,7 +4,7 @@ import ProductPageContents from "./ProductPageContents";
 import ProductPageImg from "./ProductPageImg";
 import ProductPageMenu from "./ProductPageMenu";
 import ProductPageTitleLine from "./ProductPageTitleLine";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { useState } from "react";
 // import { write } from "fs";
 

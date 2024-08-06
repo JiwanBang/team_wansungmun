@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Svg from "../../../svgs/Check";
-import downSvg from "../../../svgs/Chevron-down";
+// import downSvg from "../../../svgs/Chevron-down";
 import Header from "../../Header";
 import LongButton from "../../Public/Body/LongButton";
 import PictureBox from "../../Public/Body/PictureBox";

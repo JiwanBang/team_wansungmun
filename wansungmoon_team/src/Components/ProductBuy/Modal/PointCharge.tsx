@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Modal from "react-modal";
 import LongButton from "../../Public/Body/LongButton";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -17,7 +17,7 @@ const customStyles = {
 
 export const PointCharge = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <div>
       <div>
