@@ -40,8 +40,7 @@ const mkCase = async () => {
   // });
   for (let i = 1; i < 22; i++) {
     await db.Category.create({
-      cateImg:
-        "http://localhost:3080/api/upload/getImg?imgName=" + `${i}` + ".png",
+      cateImg: "/api/upload/getImg?imgName=" + `${i}` + ".png",
       category: titleArr[i - 1] ? titleArr[i - 1] : `${i}`,
     });
   }
@@ -93,8 +92,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 1 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -106,8 +104,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -120,8 +117,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -133,8 +129,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -146,8 +141,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -159,8 +153,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -172,8 +165,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -185,8 +177,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -198,8 +189,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -211,8 +201,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -224,8 +213,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
@@ -237,8 +225,7 @@ const mkCase = async () => {
   ).createProduct({
     content: "시험상품 3 예제입니다.",
     price: 0,
-    titleImg:
-      "http://localhost:3080/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
+    titleImg: "/api/upload/getImg?imgName=1721212550783_Slice 7 (5).png",
     productName: "시험상품 1",
     tradeLocation: "ss",
     deliveryUserId: 1,
