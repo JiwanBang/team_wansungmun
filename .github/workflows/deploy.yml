@@ -205,8 +205,7 @@ jobs:
             nvm use --lts
             cd /var/www/backend
             npm i --production
-            echo "PORT=3080" 
-            ${{ secrets.SERVER_ENV }}
+            ${{ secrets.SERVER_ENV }}'
 
       - name: Start Server
         run: |
