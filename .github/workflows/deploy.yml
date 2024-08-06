@@ -148,80 +148,78 @@ jobs:
       - name: Restart Nginx
         run: ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 'sudo service nginx restart'
 
-  # deploy_back:
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - test_node
-  #     - test_mysql
-  #     - test_mongo
-  #   # # needs에 있는 test가 정상이여야 함
+  deploy_back:
+    runs-on: ubuntu-latest
+    needs:
+      - test_node
+      - test_mysql
+      - test_mongo
+    # # needs에 있는 test가 정상이여야 함
 
-  #   steps:
-  #     - name: checkout repository
-  #       uses: actions/checkout@v4
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
 
-  #     - name: Add SSH key
-  #       uses: webfactory/ssh-agent@v0.5.4
-  #       with:
-  #         ssh-private-key: ${{ secrets.EC2_KEY }}
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.EC2_KEY }}
 
-  #     - name: Ensure SSH directory exists
-  #       run: |
-  #         mkdir -p ~/.ssh
-  #         chmod 700 ~/.ssh
+      - name: Ensure SSH directory exists
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
 
-  #     - name: Add SSH known hosts
-  #       run: ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+      - name: Add SSH known hosts
+        run: ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
-  #     # - name: Set up Node.js
-  #     #   uses: actions/setup-node@v4
-  #     #   with:
-  #     #     node-version: "20"
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: "20"
 
-  #     - name: Install Dependencies of Back
-  #       working-directory: ./server
-  #       run: npm i
+      - name: Install Dependencies of Back
+        working-directory: ./server
+        run: npm i
 
-  #     - name: Build Back
-  #       working-directory: ./server
-  #       run: npx tsc
+      - name: Build Back
+        working-directory: ./server
+        run: npx tsc
 
-  #     - name: Copy Files to EC2
-  #       run: |
-  #         ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
-  #           rm -rf /var/www/backend
-  #           mkdir /var/www/backend'
-  #         rsync -avz -e "ssh" ./server/build/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/backend
-  #         rsync -avz -e "ssh" ./server/package.json ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/backend/package.json
-  #         ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}  '
-  #           export NVM_DIR="$HOME/.nvm"
-  #           if [ -s "$NVM_DIR/nvm.sh" ]; then
-  #             . "$NVM_DIR/nvm.sh"
-  #           else
-  #             echo "nvm.sh not found"
-  #             exit 1
-  #           fi
+      - name: Copy Files to EC2
+        run: |
+          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
+            rm -rf /var/www/backend
+            mkdir /var/www/backend'
+          rsync -avz -e "ssh" ./server/build/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/backend
+          rsync -avz -e "ssh" ./server/package.json ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/backend/package.json
+          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}  '
+            export NVM_DIR="$HOME/.nvm"
+            if [ -s "$NVM_DIR/nvm.sh" ]; then
+              . "$NVM_DIR/nvm.sh"
+            else
+              echo "nvm.sh not found"
+              exit 1
+            fi
 
-  #           nvm use --lts
-  #           cd /var/www/backend
-  #           npm i --production
-  #           ${{ secrets.SERVER_ENV }}
+            nvm use --lts
+            cd /var/www/backend
+            npm i --production
+            ${{ secrets.SERVER_ENV }}
 
-  #     - name: Start Server
-  #       run: |
-  #         ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
-  #           export NVM_DIR="$HOME/.nvm"
-  #           if [ -s "$NVM_DIR/nvm.sh" ]; then
-  #             . "$NVM_DIR/nvm.sh"
-  #           else
-  #             echo "nvm.sh not found"
-  #             exit 1
-  #           fi
+      - name: Start Server
+        run: |
+          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
+            export NVM_DIR="$HOME/.nvm"
+            if [ -s "$NVM_DIR/nvm.sh" ]; then
+              . "$NVM_DIR/nvm.sh"
+            else
+              echo "nvm.sh not found"
+              exit 1
+            fi
 
-  #           nvm use --lts
+            nvm use --lts
 
-  #           npm install -g pm2
-  #           pm2 stop all
-  #           pm2 start /var/www/backend/index.js --name backend
-  #           pm2 save
-  #           pm2 startup'
+            npm install -g pm2
+            pm2 stop all
+            pm2 start /var/www/backend/index.js --name backend'
