@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "jiwanbang",
+    "password": "1234qwer",
+    "database": "complete_moon",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "timezone": "+09:00"
+  }
+}
