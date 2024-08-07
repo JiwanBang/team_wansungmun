@@ -27,7 +27,7 @@ const LoginArea = () => {
   // const loginCheck = useCallback(async () => {
   //   console.log("아무것도 일어나지 않았다!");
   //   try {
-  //     const isLogin = await axios.get("api/logCheck", {
+  //     const isLogin = await axios.get("/api/logCheck", {
   //       withCredentials: true,
   //     });
   //     if (isLogin.data) {
@@ -45,7 +45,7 @@ const LoginArea = () => {
   useEffect(() => {
     const loginCheck = async () => {
       try {
-        const isLogin = await axios.get("api/logCheck", {
+        const isLogin = await axios.get("/api/logCheck", {
           withCredentials: true,
         });
         console.log(isLogin.data);
@@ -76,7 +76,7 @@ const LoginArea = () => {
 //   const [login, setLogin] = useState(false);
 //   const loginCheck = async () => {
 //     try {
-//       const isLogin = await axios.get("api/logCheck", {
+//       const isLogin = await axios.get("/api/logCheck", {
 //         withCredentials: true,
 //       });
 //     } catch (err) {

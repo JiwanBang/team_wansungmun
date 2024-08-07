@@ -47,7 +47,7 @@ const Email_login = () => {
         } else if (data.status === 301) {
           alert("유저를 찾을 수 없습니다");
         }
-        // axios.get("api/logCheck", { withCredentials: true });
+        // axios.get("/api/logCheck", { withCredentials: true });
       }
     } catch (err) {
       console.error(err);

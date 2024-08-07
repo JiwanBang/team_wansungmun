@@ -27,7 +27,7 @@ export default useImgUpload;
 //   try {
 //     const data = await axios({
 //       method: "post",
-//       url: "api/upload/upload",
+//       url: "/api/upload/upload",
 //       headers: {
 //         "Content-type": "multipart/form-data",
 //       },
@@ -46,7 +46,7 @@ export default useImgUpload;
 //       try {
 //         const data = await axios({
 //           method: "post",
-//           url: "api/upload/upload",
+//           url: "/api/upload/upload",
 //           headers: {
 //             "Content-type": "multipart/form-data",
 //           },

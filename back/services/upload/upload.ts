@@ -7,7 +7,7 @@ const uploadMulter = (imgs: string) =>
   multer({
     storage: multer.diskStorage({
       destination: (req, file, callback) => {
-        callback(null, "./uploads");
+        callback(null, path.join(__dirname, `../../uploads`));
       },
       filename: (req, file, callback) => {
         callback(null, `${Date.now()}_${file.originalname}`);
@@ -45,7 +45,7 @@ const upload = async (req: Request, res: Response) => {
         price: req.body.price,
         content: req.body.content,
         imgs: imgstr,
-        titleImg: `/api/upload/getImg?imgName=` + titleImg,
+        titleImg: ("/api/upload/getImg?imgName" = +titleImg),
       });
       res.status(201).send();
     }
