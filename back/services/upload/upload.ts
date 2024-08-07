@@ -45,7 +45,7 @@ const upload = async (req: Request, res: Response) => {
         price: req.body.price,
         content: req.body.content,
         imgs: imgstr,
-        titleImg: ("/api/upload/getImg?imgName" = +titleImg),
+        titleImg: "/api/upload/getImg?imgName=" + titleImg,
       });
       res.status(201).send();
     }

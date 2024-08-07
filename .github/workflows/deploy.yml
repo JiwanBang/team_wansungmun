@@ -125,6 +125,17 @@ jobs:
       - name: Add SSH known hosts
         run: ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
+      - name: .env setting
+        working-directory: ./wansungmoon_team
+        run: |
+          echo ${{ secrets.REACT_APP_KAKAO_API }} >> .env
+          echo ${{ secrets.REACT_APP_KAKAO_JSKEY }} >> .env
+          echo "REACT_APP_HOST_KEY=${{ secrets.EC2_HOST }}" >> .env
+
+      # - name: .env setting2
+      #   working-directory: ./wansungmoon_team
+      #   run: echo ${{ secrets.REACT_APP_KAKAO_JSKEY }} >> .env
+
       # - name: Set up Node.js
       #   uses: actions/setup-node@v4
       #   with:
@@ -142,7 +153,8 @@ jobs:
         run: |
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
             rm -rf /var/www/front
-            mkdir /var/www/front'
+            mkdir /var/www/front
+            cd /var/www/front'
           rsync -avz -e "ssh" ./wansungmoon_team/build/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/front
 
       - name: Restart Nginx
