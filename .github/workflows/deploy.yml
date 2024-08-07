@@ -130,7 +130,7 @@ jobs:
         run: |
           echo ${{ secrets.REACT_APP_KAKAO_API }} >> .env
           echo ${{ secrets.REACT_APP_KAKAO_JSKEY }} >> .env
-          echo "REACT_HOST_KEY=${{ secrets.EC2_HOST }}" >> .env
+          echo "REACT_APP_HOST_KEY=${{ secrets.EC2_HOST }}" >> .env
 
       # - name: .env setting2
       #   working-directory: ./wansungmoon_team
