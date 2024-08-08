@@ -83,7 +83,7 @@ const Body = () => {
         formData.set("content", etcData.content);
         let data = await axios({
           method: "post",
-          url: "http://localhost:3080/api/upload/upload",
+          url: "/api/upload/upload",
 
           data: formData,
           withCredentials: true,
